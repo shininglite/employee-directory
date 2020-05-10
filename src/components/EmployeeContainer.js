@@ -9,69 +9,79 @@ import SearchForm from "./SearchForm";
 
 class EmployeeContainer extends Component {
   state = {
-    result: {},
-    search: "Brennan"
+    result: [],
+    search: "Brennan",
   };
 
-// When this component mounts, search field is empty
-componentDidMount() {
-  this.searchEmployees("");
-}
+  // When this component mounts, search field is empty
+  componentDidMount() {
+    this.searchEmployees(""); 
+  }
 
-searchEmployees = query => {
-  API.search(query)
-    .then(res => this.setState({ result: res.data }))
-    .catch(err => console.log(err));
-};
+  searchEmployees = (query) => {
+    API.search(query)
+      .then((res) => {
+        this.setState({ result: res.data })
+        console.log(this.state.result)
+      })
+      .catch((err) => console.log(err));
+  };
 
-handleInputChange = event => {
-  const value = event.target.value;
-  const first = event.target.first;
-  this.setState({
-    [first]: value
-  });
-};
+  handleInputChange = (event) => {
+    const value = event.target.value;
+    const first = event.target.name;
+    this.setState({
+      [first]: value,
+    });
+  };
 
-// When the form is submitted, search the API for the value of `this.state.search`
-handleFormSubmit = event => {
-  event.preventDefault();
-  this.searchEmployees(this.state.search);
-};
+  // When the form is submitted, search the API for the value of `this.state.search`
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    this.searchEmployees(this.state.search);
+  };
 
-render() {
-  return (
-    <Container>
-      <div>
-        <div size="md-8">
-          <div
-            heading={this.state.result.First || "Search for an Employee to Begin"}
-          >
-            {this.state.result.First ? (
-              <EmployeeDetail
-                first={this.state.result.First}
-                last={this.state.result.Last}
-                // src={this.state.result.Poster}
-                // director={this.state.result.Director}
-                // genre={this.state.result.Genre}
-                // released={this.state.result.Released}
-              />
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+  render() {
+    return (
+      <Container>
+        <div>
+          <div size="md-8">
+            <div>
+            
+              heading=[this.state.result]
+            
+            </div>
+            {/* <div
+              heading={
+                this.state.result || "Search for an Employee to Begin"
+              }
+            >
+              {this.state.result? (
+                <EmployeeDetail
+                  first={this.state.result}
+                  last={this.state.result}
+                  // src={this.state.result.Poster}
+                  // director={this.state.result.Director}
+                  // genre={this.state.result.Genre}
+                  // released={this.state.result.Released}
+                />
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+            </div> */}
           </div>
-        </div>
-        <div size="md-4">
-          <div heading="Search">
+          <div size="md-4">
+            <div heading="Search">
               <SearchForm
                 value={this.state.search}
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
               />
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
-  );
-}
+      </Container>
+    );
+  }
 }
 export default EmployeeContainer;
