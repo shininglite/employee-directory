@@ -31,6 +31,10 @@ https://shininglite.github.io/employee-directory/
 View the source code for this quiz at:
 https://github.com/shininglite/employee-directory/
 
+Detailed documentation of this application is at:
+
+https://docs.google.com/document/d/1u4CkMcr-38KsDxxYMDAJXQJCuJtj5-dSWhmyBtJkPPg/edit?usp=sharing
+
 ## Basic Functional Description
 Given a table of random users, when the user loads the page, a table of employees renders. 
 

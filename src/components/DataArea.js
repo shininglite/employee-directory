@@ -30,6 +30,7 @@ export default class DataArea extends Component {
       })
     }
 
+    // TODO: How does this compareFnc function work?
     const compareFnc = (a, b) => {
       if (this.state.order === "ascend") {
         // account for missing values
