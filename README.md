@@ -40,8 +40,8 @@ Given a table of random users, when the user loads the page, a table of employee
 
 A user is able to:
 
-Sort the table
-Filter the users by name
+Sort the table by name
+Filter the users by name or other characters, such as numbers contained in phone number
 
 This application is deployed to GitHub pages. As a reference below, are instructions on how this was done.
 
@@ -60,7 +60,7 @@ You must have a GitHub Account
 
 Install Git in your machine and Set up Git.
 
-Make sure you have Node.js and Npm installed in your machine.
+Make sure you have Node.js and Npm installed in your machine:
 
 Install Node.js
 
@@ -112,11 +112,11 @@ just run the following command :
 
 npm run deploy
 
-successful build
+'successful build' will be displayed
 
 this command will create a branch named gh-pages this branch host your app, and homepage property you created in package.json file hold your link for a live preview, or you can open the branch setting scroll down to GitHub Pages section you will find this:
 
-Your site is published
+'Your site is published' will display
 
 Visit deployed app
 
