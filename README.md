@@ -6,7 +6,7 @@ The purpose of the Employee Directory Application is to demonstrate:
 
 - how to build an application with React.js
 - how to break up the application's user interface into components
-- how to manage component state
+- how to manage component state, (using a class to extend Component)
 - how to respond to user events
 
 ## User Story
@@ -45,7 +45,7 @@ Filter the users by name or other characters, such as numbers contained in phone
 
 This application is deployed to GitHub pages. As a reference below, are instructions on how this was done.
 
------------------------------
+--------------------------------------------
 ## How to Deploy a React App to GitHub Pages
 
 For reference purposes, I am documenting how to deploy a React Appliction to GitHub Pages. Click the following link for the whole article:
