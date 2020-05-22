@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import API from "../utils/API";
 import "../styles/DataArea.css";
 
+// set initial state, users and filterdUsers are arrays of empty objects
 export default class DataArea extends Component {
   state = {
     users: [{}],
@@ -19,6 +20,7 @@ export default class DataArea extends Component {
     { name: "DOB", width: "10%" }
   ]
 
+  // this function toggles sort order when called
   handleSort = heading => {
     if (this.state.order === "descend") {
       this.setState({
@@ -30,7 +32,6 @@ export default class DataArea extends Component {
       })
     }
 
-    // TODO: How does this compareFnc function work?
     const compareFnc = (a, b) => {
       if (this.state.order === "ascend") {
         // account for missing values
